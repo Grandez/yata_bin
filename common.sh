@@ -13,6 +13,8 @@
 # Underline  = 4
 ###########################################################
 
+COMMON=
+
 RESET=0
 BLACK=30
 RED=31
@@ -41,7 +43,14 @@ msg () {
 err () {
     echo -e "\e[1;${RED}m"`date +%T` - $*${NC}
 }
-echo -e "\e[${RED}m" texto en rojo ${NC}
-echo -e "\e[${BLUE}m" texto en azul ${NC}
+info () {
+    echo -e "\e[1;${BLUE}m"`date +%T` - $*${NC}
+}
+prg() {
+   LEVEL=$1
+   shift
+   echo -en "\e[0;${WHITE}m"`date +%T` -
+   for i in {0..1} ; do echo -n "  " ; done
+   echo -e $*${NC}
+}
 
-msg un mensaje

@@ -64,8 +64,13 @@ snap install --classic eclipse
 msg "=== Instalando RStudio ==="
 CWD=`pwd`
 cd $PRJ/tmp
+
 wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2026.01.0-392-amd64.deb
 apt-get -y install ./rstudio-2026.01.0-392-amd64.deb >> $FLOG
+
+msg "=== Instalando Visual Studio Code ==="
+snap install --classic code
+
 cd $CWD
 
 
