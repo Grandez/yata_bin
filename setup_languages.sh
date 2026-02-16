@@ -61,14 +61,14 @@ fi
 
 python3 --version > /dev/null
 if [ $? -ne 0 ] ; then
-   msg 1 Instalando Python
+   prg 1 Instalando Python
    apt-get -y install python3 python3-pip >> $FLOG 2>> $FERR
    apt-get -y install python3-pycurl      >> $FLOG 2>> $FERR
 fi
 
 R --version > /dev/null
 if [ $? -ne 0 ] ; then
-   msg 1 Instalando R
+   prg 1 Instalando R
    apt-get -y install r-base >> $FLOG 2>> $FERR
    Rscript $PRJ/bin/setup_r  >> $FLOG 2>> $FERR
 fi

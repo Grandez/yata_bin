@@ -22,7 +22,7 @@ apt-get upgrade -y >> $FLOG
 prg 1 Instalando paquetes
 apt-get -y install software-properties-common curl wget git build-essential >> $FLOG 2>> $FERR
 apt-get -y install dirmngr gnupg apt-transport-https ca-certificates        >> $FLOG 2>> $FERR
-apt-get -y install unzip zip dos2unix cpu-checker                           >> $FLOG 2>> $FERR
+apt-get -y install unzip zip dos2unix cpu-checker snapd                     >> $FLOG 2>> $FERR
 
 prg 1 Instalando librerias
 apt-get -y install libcurl4-openssl-dev libfontconfig1-dev libfreetype6-dev >> $FLOG 2>> $FERR

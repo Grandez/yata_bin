@@ -58,7 +58,7 @@ check_env() {
 }
 
 echo -e "\e[1;97m"`date +%T` - Chequeando entorno "\e[0m"
-check_env
+check_env && exit 1
 
 source $PRJ/bin/common.sh  # Existe
 
