@@ -29,7 +29,7 @@ WHITE=97
 
 NC='\e[0m'
 
-# Obtener la fecha de inicio y losficheros de logging
+# Obtener la fecha de inicio y los ficheros de logging
 BEGIN=`date +%s`
 SCRIPT=${0##*/}
 SCRIPT=${SCRIPT%.*}
@@ -53,4 +53,10 @@ prg() {
    for i in {0..1} ; do echo -n "  " ; done
    echo -e $*${NC}
 }
+elapsed() {
+   END=`date +%s`
+   diff=$(($END - $BEG))  # Diferencia en segundos
 
+   res=$(printf '%02d:%02d:%02d\n' $((diff/3600)) $((diff%3600/60)) $((diff%60)))
+   info Duracion $res
+}
